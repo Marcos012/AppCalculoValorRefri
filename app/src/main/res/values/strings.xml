@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="loginscreen">Tela de Login</string>
+    <string name="enter">entrar</string>
+    <string name="cadastro">cadastrar</string>
+    <string name="password">Senha</string>
+    <string name="user">Nome</string>
+    <string name="title_activity_detail">Tela Principal</string>
+</resources>
