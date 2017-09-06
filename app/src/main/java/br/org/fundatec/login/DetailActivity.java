@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class DetailActivity extends AppCompatActivity {
 
     private EditText mValor;
@@ -43,13 +46,18 @@ public class DetailActivity extends AppCompatActivity {
         mBtnCalcular.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Float valor = Float.valueOf(mValor.getText().toString());
-                 Float quantidade = Float.valueOf(mQuantidade.getText().toString());
-                 Float vlPorLitro = (valor * 1000) / quantidade;
-                 mValorLitro.setText("O valor por litro é R$ " + String.format("%.2f", vlPorLitro));
-                 Log.e("fundatec", "Clicou no botao calcular");
-             }
-
-        });
+                 if(mValor.getText().toString().isEmpty()) {
+                     YoYo.with(Techniques.Shake).playOn(mValor);
+                 } else if(mQuantidade.getText().toString().isEmpty()){
+                     YoYo.with(Techniques.Shake).playOn(mQuantidade);
+                 } else{
+                     Float valor = Float.valueOf(mValor.getText().toString());
+                     Float quantidade = Float.valueOf(mQuantidade.getText().toString());
+                     Float vlPorLitro = (valor * 1000) / quantidade;
+                     mValorLitro.setText("O valor por litro é R$ " + String.format("%.2f", vlPorLitro));
+                     Log.e("fundatec", "Clicou no botao calcular");
+                 }
+                 }
+            });
     }
 }

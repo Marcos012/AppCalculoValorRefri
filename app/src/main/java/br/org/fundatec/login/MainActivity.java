@@ -45,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 if( mEdtUser.getText().toString().isEmpty()){
                     YoYo.with(Techniques.Shake).playOn(mEdtUser);
                     mEdtUser.setError("Campo obrigatorio");
-                } else{
+
+                } else if(mEdtPassward.getText().toString().isEmpty()){
+                    YoYo.with(Techniques.Shake).playOn(mEdtPassward);
+                    mEdtPassward.setError("Campo obrigatorio");
+                }
+                else{
                 String text = "Clicou no botão!!!! \n Usuario : " +
                 mEdtUser.getText() + "\n Senha:" + mEdtPassward.getText();
                 Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
