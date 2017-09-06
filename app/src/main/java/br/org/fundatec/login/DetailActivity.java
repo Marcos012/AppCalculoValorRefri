@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,7 +47,7 @@ public class DetailActivity extends AppCompatActivity {
                  Float quantidade = Float.valueOf(mQuantidade.getText().toString());
                  Float vlPorLitro = (valor * 1000) / quantidade;
                  mValorLitro.setText("O valor por litro é R$ " + String.format("%.2f", vlPorLitro));
-
+                 Log.e("fundatec", "Clicou no botao calcular");
              }
 
         });
